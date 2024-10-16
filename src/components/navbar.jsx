@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="w-full flex items-center justify-between lg:px-4 px-2 shadow-sm bg-[#F7F7F7] py-1">
         <div className="flex h-full items-center justify-start flex-grow">
           <Link to="/" className="pl-1 font-semibold">
-            <img src={logo} alt="" className="w-44 h-9" />
+            <img src={logo} alt="" className="md:w-44 w-32  h-9" />
           </Link>
         </div>
         <div className="flex h-full items-center justify-center flex-grow">
@@ -40,7 +40,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex h-full items-center justify-end flex-grow">
-          <div className="flex items-center gap-x-1 bg-[#F37002] px-4 rounded-2xl py-1">
+          <div className="flex items-center gap-x-1 bg-[#F37002] md:px-4 px-2.5 rounded-2xl md:py-1 py-2 md:text-base text-xs">
             <FaPhone className="text-[#F7F7F7]" />
             <button
               onClick={handleCall}

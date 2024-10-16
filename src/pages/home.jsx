@@ -6,53 +6,52 @@ import FAQSection from "../components/faq";
 import SalesBanner from "../components/banner";
 import SignUpForm from "../components/form";
 import Footer from "../components/footer";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
+import kashmir_1 from "../assets/kashmir/kashmir_1.jpg";
 
 
+ const vacationSpots = [
+   {
+     src: "https://images.unsplash.com/photo-1560853950-2502ec2ab867?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+     span: "md:col-span-2 md:row-span-2",
+     title: "Kashmir",
+   },
+   {
+     src: "https://images.unsplash.com/photo-1657894736581-ccc35d62d9e2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+     span: "md:col-span-1 row-span-1",
+     title: "Kullu",
+   },
+   {
+     src: "https://images.unsplash.com/photo-1720513138417-5c8eb0b2d660?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNoaW1sYXxlbnwwfDF8MHx8fDI%3D",
+     span: "md:col-span-1 row-span-1",
+     title: "Manali",
+   },
+   {
+     src: "https://images.unsplash.com/photo-1594102552386-793e5a27ad10?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a3VsbHV8ZW58MHwxfDB8fHwy",
+     span: "md:col-span-1 row-span-1",
+     title: "Jammu",
+   },
+   {
+     src: "https://images.unsplash.com/photo-1586261709963-7a93cad40d44?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEdvbGRlbiUyMFRlbXBsZSUyMEFtcml0c2FyfGVufDB8MXwwfHx8Mg%3D%3D",
+     span: "md:col-span-1 row-span-1",
+     title: "Shimla",
+   },
+   {
+     src: "https://images.unsplash.com/photo-1615445969492-6894df4a5613?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+     span: "md:col-span-1 row-span-1",
+     title: "Dallhousie",
+   },
+ ];
+ 
 const Home = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   const handleBookNow = (pkg) => {
     navigate("/tour", { state: { package: pkg } }); // Pass package data
   };
-  const images = [
-    "https://images.unsplash.com/photo-1664212008939-6afc24cc6ce8?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1560853960-d776c82ffc92?q=80&w=2129&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1581791534721-e599df4417f7?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
+  const images = [kashmir_1];
 
-  const vacationSpots = [
-    {
-      src: "https://images.unsplash.com/photo-1560853950-2502ec2ab867?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      span: "md:col-span-2 md:row-span-2",
-      title: "Kashmir",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1657894736581-ccc35d62d9e2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      span: "md:col-span-1 row-span-1",
-      title: "Kullu",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1720513138417-5c8eb0b2d660?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNoaW1sYXxlbnwwfDF8MHx8fDI%3D",
-      span: "md:col-span-1 row-span-1",
-      title: "Manali",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1594102552386-793e5a27ad10?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a3VsbHV8ZW58MHwxfDB8fHwy",
-      span: "md:col-span-1 row-span-1",
-      title: "Jammu",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1586261709963-7a93cad40d44?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEdvbGRlbiUyMFRlbXBsZSUyMEFtcml0c2FyfGVufDB8MXwwfHx8Mg%3D%3D",
-      span: "md:col-span-1 row-span-1",
-      title: "Shimla",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1615445969492-6894df4a5613?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      span: "md:col-span-1 row-span-1",
-      title: "Dallhousie",
-    },
-  ];
+ 
 
   return (
     <div>

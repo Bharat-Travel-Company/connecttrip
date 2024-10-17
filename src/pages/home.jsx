@@ -7,8 +7,7 @@ import SalesBanner from "../components/banner";
 import SignUpForm from "../components/form";
 import Footer from "../components/footer";
 import { useNavigate } from "react-router-dom"; 
-import kashmir_1 from "../assets/kashmir/kashmir_1.jpg";
-
+import {kashmirPackages} from "../data/packagesData"
 
  const vacationSpots = [
    {
@@ -49,14 +48,11 @@ const Home = () => {
   const handleBookNow = (pkg) => {
     navigate("/tour", { state: { package: pkg } }); // Pass package data
   };
-  const images = [kashmir_1];
-
  
-
   return (
     <div>
       <Navbar />
-      <Carousel images={images} />
+      <Carousel data={kashmirPackages} />
       <section className="w-full flex items-center justify-center flex-col py-16 ">
         <h1 className="md:text-5xl text-3xl font-semibold pb-8 text-[#0F1E32]">
           Desired Vacation Spots

@@ -1,19 +1,17 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
-const Carousel = ({ images }) => {
+const Carousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
   };
 
   const prevImage = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
   };
-
+  console.log(data);
   useEffect(() => {
     const interval = setInterval(() => {
       nextImage();
@@ -23,13 +21,12 @@ const Carousel = ({ images }) => {
       clearInterval(interval);
     };
   }, []);
-  console.log(images);
   return (
-    <div className="relative w-full md:h-[calc(100vh-8rem)] h-[380px] overflow-hidden">
+    <div className="relative w-full md:h-[calc(100vh-2.5rem)] h-[380px] overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         <img
           className="w-full h-full object-cover"
-          src={images[currentIndex]}
+          src={data[currentIndex].image}
           alt="Carousel"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center bg-black bg-opacity-40">

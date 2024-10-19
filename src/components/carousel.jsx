@@ -11,7 +11,6 @@ const Carousel = ({ data }) => {
   const prevImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
   };
-  console.log(data);
   useEffect(() => {
     const interval = setInterval(() => {
       nextImage();
@@ -23,15 +22,34 @@ const Carousel = ({ data }) => {
   }, []);
   return (
     <div className="relative w-full md:h-[calc(100vh-2.5rem)] h-[380px] overflow-hidden">
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full ">
         <img
           className="w-full h-full object-cover"
           src={data[currentIndex].image}
           alt="Carousel"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center bg-black bg-opacity-40">
-          <div className="flex items-center my-[15px] min-h-[1px] min-w-[70vw]  bg-gradient-to-r from-[hsla(0,0%,100%,.05)] via-white to-[hsla(0,0%,88%,.05)]">
-            {/* Your content here */}
+          <div className="flex flex-col items-center justify-center absolute top-[45%]">
+            <h1 className="text-white text-6xl font-bold mb-4">
+              {data[currentIndex].packageName}
+            </h1>
+            <h3 className="text-white text-2xl font-semibold">
+              {data[currentIndex].duration}
+            </h3>
+            <div className="flex items-center my-[15px] min-h-[1px] min-w-[70vw]  bg-gradient-to-r from-[hsla(0,0%,100%,.05)] via-white to-[hsla(0,0%,88%,.05)]"></div>
+            <div className=" font-semibold flex items-center gap-2">
+              <span className="text-3xl text-white ">
+                {data[currentIndex].discountedPrice}
+              </span>
+              <span className="text-2xl text-white/70 line-through decoration-current my-auto">
+                {data[currentIndex].originalPrice}
+              </span>
+            </div>
+            <div className="flex items-center gap-x-1 bg-[#F37002] md:px-4 px-2.5 rounded-3xl md:py-2 py-2 md:text-base text-xs mt-4">
+              <button className="text-[#F7F7F7] font-semibold uppercase">
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
       </div>

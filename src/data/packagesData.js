@@ -8,8 +8,9 @@ import kashmir_6 from "../assets/kashmir/kashmir_6.jpg";
 export const kashmirPackages = [
   {
     packageName: "Kashmir Short Trip",
-    duration: "03 Nights / 04 Days",
-    price: "₹ 6,999/-",
+    duration: "03 Nights & 04 Days",
+    originalPrice: "₹ 9,332",
+    discountedPrice: "₹ 6,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",
@@ -25,11 +26,14 @@ export const kashmirPackages = [
       "All Taxes and Allowances",
     ],
     image: kashmir_1,
+    tag: "Best Seller",
+    stayDetails: [{ day: "3D", location: "Srinagar" }],
   },
   {
     packageName: "Kashmir Honeymoon Tour Package",
-    duration: "04 Nights / 05 Days",
-    price: "₹ 10,999/-",
+    duration: "04 Nights & 05 Days",
+    originalPrice: "₹ 14,665",
+    discountedPrice: "₹ 10,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",
@@ -47,11 +51,17 @@ export const kashmirPackages = [
       "All Taxes and Allowances",
     ],
     image: kashmir_2,
+    tag: "Recommended",
+    stayDetails: [
+      { day: "3D", location: "Srinagar" },
+      { day: "1D", location: "Houseboat in Srinagar" },
+    ],
   },
   {
     packageName: "Beauty of Kashmir Package",
-    duration: "05 Nights / 06 Days",
-    price: "₹ 15,999/-",
+    duration: "05 Nights & 06 Days",
+    originalPrice: "₹ 21,332",
+    discountedPrice: "₹ 15,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",
@@ -68,11 +78,19 @@ export const kashmirPackages = [
       "All Taxes and Allowances",
     ],
     image: kashmir_3,
+    tag: "Trending",
+    stayDetails: [
+      { day: "2D", location: "Srinagar" },
+      { day: "1D", location: "Gulmarg" },
+      { day: "1D", location: "Pahalgam" },
+      { day: "1D", location: "Houseboat in Srinagar" },
+    ],
   },
   {
     packageName: "Kashmir Trip with Doodhpathri",
-    duration: "05 Nights / 06 Days",
-    price: "₹ 15,999/-",
+    duration: "05 Nights & 06 Days",
+    originalPrice: "₹ 21,332",
+    discountedPrice: "₹ 15,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",
@@ -92,11 +110,18 @@ export const kashmirPackages = [
       "All Taxes and Allowances",
     ],
     image: kashmir_4,
+    tag: "Newly Launched",
+    stayDetails: [
+      { day: "2D", location: "Srinagar" },
+      { day: "1D", location: "Houseboat in Srinagar" },
+      { day: "2D", location: "Pahalgam" },
+    ],
   },
   {
     packageName: "Jammu and Kashmir Trip Package",
-    duration: "07 Nights / 08 Days",
-    price: "₹ 21,999/-",
+    duration: "07 Nights & 08 Days",
+    originalPrice: "₹ 29,332",
+    discountedPrice: "₹ 21,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",
@@ -118,11 +143,19 @@ export const kashmirPackages = [
       "All Taxes and Allowances",
     ],
     image: kashmir_5,
+    tag: null,
+    stayDetails: [
+      { day: "2D", location: "Katra" },
+      { day: "2D", location: "Srinagar" },
+      { day: "1D", location: "Houseboat in Srinagar" },
+      { day: "2D", location: "Pahalgam" },
+    ],
   },
   {
     packageName: "Patnitop- Katra Package",
-    duration: "06 Nights / 07 Days",
-    price: "₹ 10,999/-",
+    duration: "06 Nights & 07 Days",
+    originalPrice: "₹ 14,665",
+    discountedPrice: "₹ 10,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",
@@ -140,5 +173,10 @@ export const kashmirPackages = [
       "All Taxes and Allowances",
     ],
     image: kashmir_6,
+    tag: null,
+    stayDetails: [
+      { day: "2D", location: "Katra" },
+      { day: "2D", location: "Patnitop" },
+    ],
   },
 ];

@@ -1,6 +1,6 @@
 import { FaPhone } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 const Navbar = () => {
   const handleCall = () => {
     //to open in same tab
@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
   return (
     <nav className="w-full ">
-      <div className="w-full flex items-center justify-between lg:px-4 px-2 shadow-sm bg-[#F7F7F7] py-1">
+      <div className="flex absolute z-40 w-full px-24 py-2 bg-gradient-to-b from-gray-50/10  to-transparent backdrop-blur-lg">
         <div className="flex h-full items-center justify-start flex-grow">
           <Link to="/" className="pl-1 font-semibold">
             <img src={logo} alt="" className="md:w-44 w-32  h-9" />
@@ -29,7 +29,7 @@ const Navbar = () => {
                     ` ${
                       isActive
                         ? "text-[#F37002] before:content-['•'] before:mr-1 before:text-[#F37002]"
-                        : "text-[#202020]"
+                        : "text-gray-100"
                     }`
                   }
                 >

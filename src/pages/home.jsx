@@ -1,142 +1,126 @@
 import Navbar from "../components/navbar";
-import { FaClock, FaBus, FaUtensils } from "react-icons/fa6";
 import Carousel from "../components/carousel";
 import packages from "../data/packages";
 import FAQSection from "../components/faq";
 import SalesBanner from "../components/banner";
 import SignUpForm from "../components/form";
 import Footer from "../components/footer";
-import { useNavigate } from "react-router-dom"; 
-import {kashmirPackages} from "../data/packagesData"
+import { useNavigate } from "react-router-dom";
+import { kashmirPackages } from "../data/packagesData";
+import { WiStars } from "react-icons/wi";
+import { FaTag } from "react-icons/fa6";
+const Card = ({
+  image,
+  duration,
+  originalPrice,
+  discountedPrice,
+  discount,
+  inclusions,
+  tag,
+  packageName,
+  stayDetails,
+}) => {
+  return (
+    <div className="rounded-xl flex flex-col w-full gap-2 shadow-lg transition-shadow duration-300">
+      <div className=" w-full h-72 relative rounded-xl overflow-hidden">
+        <div className=" absolute right-0 top-0 rounded-bl-lg bg-[#f57725] text-white px-2.5">
+          {discount}
+        </div>
+        <img
+          src={image}
+          alt={packageName}
+          className="w-full h-full object-cover rounded-t-xl aspect-square"
+        />
+      </div>
+      <div className="p-4 flex flex-col gap-2">
+        <div className="flex justify-between items-center">
+          <p className="text-gray-500 text-sm">{duration}</p>
+          {tag && (
+            <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
+              <FaTag />
+              <span>{tag}</span>
+            </div>
+          )}
+        </div>
+        <h2 className="text-gray-800 text-lg font-semibold">{packageName}</h2>
+        <ul className="flex flex-wrap gap-2">
+          {stayDetails.map((stay, index) =>
+            index <= 2 ? (
+              <li key={index} className="flex items-center text-sm">
+                <span className="font-bold mr-1">{stay.day}</span>
+                <span className="text-gray-600">{stay.location}</span>
+              </li>
+            ) : index === 3 ? (
+              <span
+                key={index}
+                className="flex items-center justify-center bg-[#f57725] text-white w-6 h-6 rounded-full font-semibold text-xs before:content-['+']"
+              >
+                {stayDetails.length - 3}
+              </span>
+            ) : null
+          )}
+        </ul>
+        <div className="flex items-center gap-2 mt-2">
+          <span className="text-lg font-bold text-green-600">
+            {discountedPrice}
+          </span>
+          <span className="text-sm text-gray-500 line-through">
+            {originalPrice}
+          </span>
+          <span className="text-sm font-semibold text-green-600 bg-green-100 px-2">
+            SAVE ₹{""}
+            {(
+              Number(originalPrice.replace(/[^\d.]/g, "")) -
+              Number(discountedPrice.replace(/[^\d.]/g, ""))
+            ).toLocaleString("en-IN")}
+          </span>
+        </div>
+        <div>
+          <button className="w-full  bg-[#f37002] text-white py-2 rounded-lg my-2">Request a Callback</button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
- const vacationSpots = [
-   {
-     src: "https://images.unsplash.com/photo-1560853950-2502ec2ab867?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-     span: "md:col-span-2 md:row-span-2",
-     title: "Kashmir",
-   },
-   {
-     src: "https://images.unsplash.com/photo-1657894736581-ccc35d62d9e2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-     span: "md:col-span-1 row-span-1",
-     title: "Kullu",
-   },
-   {
-     src: "https://images.unsplash.com/photo-1720513138417-5c8eb0b2d660?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNoaW1sYXxlbnwwfDF8MHx8fDI%3D",
-     span: "md:col-span-1 row-span-1",
-     title: "Manali",
-   },
-   {
-     src: "https://images.unsplash.com/photo-1594102552386-793e5a27ad10?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a3VsbHV8ZW58MHwxfDB8fHwy",
-     span: "md:col-span-1 row-span-1",
-     title: "Jammu",
-   },
-   {
-     src: "https://images.unsplash.com/photo-1586261709963-7a93cad40d44?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEdvbGRlbiUyMFRlbXBsZSUyMEFtcml0c2FyfGVufDB8MXwwfHx8Mg%3D%3D",
-     span: "md:col-span-1 row-span-1",
-     title: "Shimla",
-   },
-   {
-     src: "https://images.unsplash.com/photo-1615445969492-6894df4a5613?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-     span: "md:col-span-1 row-span-1",
-     title: "Dallhousie",
-   },
- ];
- 
 const Home = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   const handleBookNow = (pkg) => {
     navigate("/tour", { state: { package: pkg } }); // Pass package data
   };
- 
+
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center w-full">
       <Navbar />
       <Carousel data={kashmirPackages} />
-      <section className="w-full flex items-center justify-center flex-col py-16 ">
-        <h1 className="md:text-5xl text-3xl font-semibold pb-8 text-[#0F1E32]">
-          Desired Vacation Spots
-        </h1>
-        <div className="max-w-[1200px] w-full px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px]">
-            {vacationSpots.map((spot, i) => (
-              <div
-                key={i}
-                className={`relative rounded-xl overflow-hidden ${spot.span} group`}
-              >
-                <img
-                  src={spot.src}
-                  alt={`Vacation spot ${i + 1}`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gray-700 opacity-60 rounded-md group-hover:opacity-0 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <h2 className="text-white text-xl md:text-2xl font-bold text-center px-2 group-hover:opacity-0 transition-opacity duration-300">
-                    {spot.title}
-                  </h2>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section className=" flex items-center justify-center flex-col py-16 max-w-[1200px] w-full">
+        <div className="w-full pl-4 mb-4 space-y-0.5">
+          <h1 className="text-2xl  font-semibold  text-[#fcaf17] w-full text-start flex ">
+            Best Packages <WiStars className="text-[#f57725]" />
+          </h1>
+          <p className="text-start w-full  text-gray-700 font-semibold">
+            Tailor-Made Best Price Packages Just for You{" "}
+          </p>
         </div>
-      </section>
-      <section className="w-full flex items-center justify-center flex-col  bg-gray-100 py-16">
-        <h1 className="md:text-5xl text-3xl font-semibold pb-8 text-[#0F1E32]">
-          Ultimate Travel Experience
-        </h1>
-        <div className="max-w-[1200px] w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:px-0 px-4">
-          {packages.map((pkg, index) => (
-            <div
+        <div className="max-w-[1200px] w-full px-4 grid md:grid-cols-3  grid-cols-1 gap-4">
+          {kashmirPackages.map((pkg, index) => (
+            <Card
               key={index}
-              className="rounded-xl overflow-hidden p-4 bg-gray-200"
-            >
-              <img
-                src={pkg.imgSrc}
-                alt={pkg.title}
-                className="rounded-xl h-64 w-full object-cover"
-              />
-              <h1 className="text-2xl  font-semibold text-[#0F1E32]">
-                {pkg.title}
-              </h1>
-              <div className="mb-2 flex gap-x-2 ">
-                {pkg.itinerary.map((item) => (
-                  <span
-                    key={item}
-                    className="bg-[#FFDA32] px-2 rounded-full  text-[#1C2B38]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-x-1">
-                  <FaClock className="text-[#0F1E32]" />
-                  <p>{pkg.duration}</p>
-                </li>
-                <li className="flex items-center gap-x-1">
-                  <FaBus className="text-[#0F1E32]" />
-                  <p>{pkg.transportation}</p>
-                </li>
-                <li className="flex items-center gap-x-1">
-                  <FaUtensils className="text-[#0F1E32]" />
-                  <p>{pkg.meals}</p>
-                </li>
-              </ul>
-              <div className="flex justify-between my-3">
-                <h2 className="text-2xl font-semibold text-[#7BBCB0]">
-                  {pkg.price}
-                </h2>
-                <button
-                  className="bg-[#FFDA32] text-[#1C2B38] font-medium px-2 rounded-md"
-                  onClick={() => handleBookNow(pkg)}
-                >
-                  Book Now
-                </button>
-              </div>
-            </div>
+              image={pkg.image}
+              duration={pkg.duration}
+              discount={pkg.discount}
+              discountedPrice={pkg.discountedPrice}
+              originalPrice={pkg.originalPrice}
+              inclusions={pkg.inclusions}
+              tag={pkg.tag}
+              packageName={pkg.packageName}
+              stayDetails={pkg.stayDetails}
+            ></Card>
           ))}
         </div>
       </section>
+
       <section>
         <FAQSection></FAQSection>
       </section>

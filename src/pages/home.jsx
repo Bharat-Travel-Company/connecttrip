@@ -75,8 +75,8 @@ const Card = ({
             ).toLocaleString("en-IN")}
           </span>
         </div>
-        <div>
-          <button className="w-full  bg-[#f37002] text-white py-2 rounded-lg my-2">
+        <div className="">
+          <button className="w-full  bg-[#f37002] text-white py-2 rounded-lg my-2 ">
             Request a Callback
           </button>
         </div>
@@ -96,7 +96,7 @@ const PlaceToVisitCard = ({ image, name }) => {
                     [border-image-source:linear-gradient(90deg,var(--primary-color,#f37002)_0,#faa21a_98.47%)]
                     [border-image-slice:1]"
         >
-          {name}
+          {name} 
         </p>
       </div>
     </div>

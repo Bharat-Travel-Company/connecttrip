@@ -4,7 +4,7 @@ import FAQSection from "../components/faq";
 import SalesBanner from "../components/banner";
 import SignUpForm from "../components/form";
 import Footer from "../components/footer";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { kashmirPackages } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
 import { FaTag } from "react-icons/fa6";
@@ -76,9 +76,12 @@ const Card = ({
           </span>
         </div>
         <div className="">
-          <button className="w-full  bg-[#f37002] text-white py-2 rounded-lg my-2 ">
-            Request a Callback
-          </button>
+          <Link to="/form">
+            <button className="w-full  bg-[#f37002] text-white py-2 rounded-lg my-2 ">
+              Request a Callback
+            </button>
+          </Link>
+
         </div>
       </div>
     </div>
@@ -124,18 +127,21 @@ const Home = () => {
         </div>
         <div className="max-w-[1200px] w-full px-4 grid lg:grid-cols-3 md:grid-cols-2  grid-cols-1 gap-4">
           {kashmirPackages.map((pkg, index) => (
-            <Card
-              key={index}
-              image={pkg.image}
-              duration={pkg.duration}
-              discount={pkg.discount}
-              discountedPrice={pkg.discountedPrice}
-              originalPrice={pkg.originalPrice}
-              inclusions={pkg.inclusions}
-              tag={pkg.tag}
-              packageName={pkg.packageName}
-              stayDetails={pkg.stayDetails}
-            ></Card>
+            <Link key={index}
+            to="/tour">
+              <Card
+                
+                image={pkg.image}
+                duration={pkg.duration}
+                discount={pkg.discount}
+                discountedPrice={pkg.discountedPrice}
+                originalPrice={pkg.originalPrice}
+                inclusions={pkg.inclusions}
+                tag={pkg.tag}
+                packageName={pkg.packageName}
+                stayDetails={pkg.stayDetails}
+              ></Card>
+            </Link>
           ))}
         </div>
       </section>

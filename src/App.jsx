@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Form } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./pages/home";
 import Tour from "./pages/tour";
 import SignUpForm from "./components/form";
 import WhatsAppButton from "./components/whatsApp";
-import Address from "./components/address";
+
 import PrivacyPolicy from "./components/privacyPolicy";
 import TermsAndConditions from "./components/termsAndConditions";
 const Modal = ({ isOpen, onClose }) => {
@@ -56,6 +56,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tour" element={<Tour />} />
+            <Route path="/form" element={<SignUpForm/>} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route
               path="/terms-and-conditions"

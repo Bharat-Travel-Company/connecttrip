@@ -7,16 +7,13 @@ const Navbar = () => {
     // window.location.href = "tel:+91-963-010-7798";
     window.open("tel:+91-963-010-7798", "_blank");
   };
-  const routes = [
-    { label: "Home", path: "/" },
-    { label: "Blogs", path: "/blogs" },
-  ];
+  const routes = [{ label: "Home", path: "/" }];
   return (
     <nav className="w-full ">
-      <div className="flex absolute z-40 w-full px-24 py-2 bg-gradient-to-b from-gray-50/10  to-transparent backdrop-blur-lg">
+      <div className="flex absolute z-40 w-full lg:px-24 md:px-4 px-2  py-2 bg-gradient-to-b from-gray-50/10  to-transparent backdrop-blur-lg">
         <div className="flex h-full items-center justify-start flex-grow">
           <Link to="/" className="pl-1 font-semibold">
-            <img src={logo} alt="" className="md:w-44 w-32  h-9" />
+            <img src={logo} alt="" className="md:w-44 w-28  h-9" />
           </Link>
         </div>
         <div className="flex h-full items-center justify-center flex-grow">
@@ -40,7 +37,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex h-full items-center justify-end flex-grow">
-          <div className="flex items-center gap-x-1 bg-[#F37002] md:px-4 px-2.5 rounded-2xl md:py-1 py-2 md:text-base text-xs">
+          <div className="flex items-center gap-x-1 bg-[#F37002] md:px-4 px-2.5 rounded-2xl md:py-1 py-2 md:text-base  text-[0.65rem]">
             <FaPhone className="text-[#F7F7F7]" />
             <button
               onClick={handleCall}

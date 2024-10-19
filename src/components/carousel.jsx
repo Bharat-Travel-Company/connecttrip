@@ -21,7 +21,7 @@ const Carousel = ({ data }) => {
     };
   }, []);
   return (
-    <div className="relative w-full md:h-[calc(100vh-2.5rem)] h-[380px] overflow-hidden">
+    <div className="relative w-full lg:h-[calc(100vh)] md:h-[calc(100vh-2.5rem)] h-[calc(100vh-16rem)]  overflow-hidden">
       <div className="absolute inset-0 w-full h-full ">
         <img
           className="w-full h-full object-cover"
@@ -29,8 +29,8 @@ const Carousel = ({ data }) => {
           alt="Carousel"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center bg-black bg-opacity-40">
-          <div className="flex flex-col items-center justify-center absolute top-[45%]">
-            <h1 className="text-white text-6xl font-bold mb-4">
+          <div className="flex flex-col items-center justify-center absolute md:top-[60%] top-[55%]">
+            <h1 className="text-white lg:text-6xl md:text-4xl text-3xl font-bold mb-4">
               {data[currentIndex].packageName}
             </h1>
             <h3 className="text-white text-2xl font-semibold">
@@ -57,16 +57,16 @@ const Carousel = ({ data }) => {
         className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 cursor-pointer"
         onClick={prevImage}
       >
-        <div className="flex items-center justify-center box-border bg-black/50 border border-[#e0e0e0] rounded-full w-[50px] h-[50px] min-w-[50px] min-h-[50px] max-w-[50px] max-h-[50px]">
-          <FaChevronLeft className="text-white  text-2xl" />
+        <div className="flex items-center justify-center box-border bg-black/50 border border-[#e0e0e0] rounded-full lg:size-12 size-8">
+          <FaChevronLeft className="text-white  lg:text-2xl md:text-xl text-lg" />
         </div>
       </div>
       <div
         className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 cursor-pointer"
         onClick={nextImage}
       >
-        <div className="flex items-center justify-center box-border bg-black/50 border border-[#e0e0e0] rounded-full w-[50px] h-[50px] min-w-[50px] min-h-[50px] max-w-[50px] max-h-[50px]">
-          <FaChevronRight className="text-white  text-2xl" />
+        <div className="flex items-center justify-center box-border bg-black/50 border border-[#e0e0e0] rounded-full lg:size-12 size-8">
+          <FaChevronRight className="text-white  lg:text-2xl md:text-xl text-lg" />
         </div>
       </div>
     </div>

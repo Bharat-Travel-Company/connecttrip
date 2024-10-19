@@ -103,7 +103,7 @@ const Home = () => {
             Tailor-Made Best Price Packages Just for You{" "}
           </p>
         </div>
-        <div className="max-w-[1200px] w-full px-4 grid md:grid-cols-3  grid-cols-1 gap-4">
+        <div className="max-w-[1200px] w-full px-4 grid lg:grid-cols-3 md:grid-cols-2  grid-cols-1 gap-4">
           {kashmirPackages.map((pkg, index) => (
             <Card
               key={index}

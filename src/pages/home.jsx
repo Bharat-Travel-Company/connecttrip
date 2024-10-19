@@ -158,14 +158,14 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <section>
+      <section className="max-w-[1200px] w-full ">
         <FAQSection></FAQSection>
       </section>
-      <section className="py-16  w-full bg-gray-100">
+      {/* <section className="py-16  w-full ">
         <div className="md:max-w-sm max-w-sm mx-auto px-4">
           <SignUpForm></SignUpForm>
         </div>
-      </section>
+      </section> */}
       <section className="pb-16">
         <SalesBanner></SalesBanner>
       </section>

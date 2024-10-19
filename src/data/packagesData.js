@@ -5,6 +5,10 @@ import kashmir_4 from "../assets/kashmir/kashmir_4.jpg";
 import kashmir_5 from "../assets/kashmir/kashmir_5.jpg";
 import kashmir_6 from "../assets/kashmir/kashmir_6.jpg";
 
+import Dal_Lake from "../assets/kashmir/placeToVist/Dal_Lake.jpg";
+import Pahalgram from "../assets/kashmir/placeToVist/Pahalgam.jpg";
+import Vashanio_Devi from "../assets/kashmir/placeToVist/Vashanio_Devi.jpg";
+
 export const kashmirPackages = [
   {
     packageName: "Kashmir Short Trip",
@@ -178,5 +182,21 @@ export const kashmirPackages = [
       { day: "2D", location: "Katra" },
       { day: "2D", location: "Patnitop" },
     ],
+  },
+];
+
+
+export const placesToVisit = [
+  {
+    name: "Dal Lake",
+    image: Dal_Lake,
+  },
+  {
+    name: "Vashanio_Devi",
+    image: Vashanio_Devi,
+  },
+  {
+    name: "Pahalgram",
+    image: Pahalgram,
   },
 ];

@@ -105,7 +105,7 @@ const PlaceToVisitCard = ({ image, name }) => {
     </div>
   );
 };
-const Home = () => {
+const Dubai = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   const handleBookNow = (pkg) => {
@@ -180,4 +180,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Dubai;

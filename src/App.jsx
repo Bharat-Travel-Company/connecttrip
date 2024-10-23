@@ -1,12 +1,19 @@
 import { BrowserRouter as Router, Route, Routes, Form } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Home from "./pages/home";
+import Home from "./pages/Kashmir";
 import Tour from "./pages/tour";
 import SignUpForm from "./components/form";
 import WhatsAppButton from "./components/whatsApp";
 
 import PrivacyPolicy from "./components/privacyPolicy";
 import TermsAndConditions from "./components/termsAndConditions";
+import MainHome from "./pages/mainHome";
+import Kashmir from "./pages/Kashmir";
+import Kerala from "./pages/Kerala";
+import Himachal from "./pages/Himachal";
+import Andaman from "./pages/Andaman";
+import Dubai from "./pages/Dubai";
+import Thailand from "./pages/Thailand";
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
@@ -38,11 +45,9 @@ const Modal = ({ isOpen, onClose }) => {
 };
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
-  useEffect(() => {
-    setIsModalOpen(true);
-  }, []);
+
 
   return (
     <>
@@ -54,7 +59,14 @@ function App() {
       <Router>
         <div className="w-full h-full">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<MainHome />} />
+            <Route path="/kashmir" element={<Kashmir />} />
+            <Route path="/kerala" element={<Kerala />} />
+            <Route path="/himachal" element={<Himachal />} />
+            <Route path="/andamanandnikobar" element={<Andaman />} />
+            <Route path="/dubai" element={<Dubai />} />
+            <Route path="/thailand" element={<Thailand />} />
+
             <Route path="/tour" element={<Tour />} />
             <Route path="/form" element={<SignUpForm/>} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

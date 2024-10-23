@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-
+import {Link} from "react-router-dom"
 const Carousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -29,7 +29,7 @@ const Carousel = ({ data }) => {
           alt="Carousel"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center bg-black bg-opacity-40">
-          <div className="flex flex-col items-center justify-center absolute md:top-[60%] top-[55%]">
+          <div className="flex flex-col items-center justify-center absolute md:top-[40%] top-[35%]">
             <h1 className="text-white lg:text-6xl md:text-4xl text-3xl font-bold mb-4">
               {data[currentIndex].packageName}
             </h1>
@@ -46,9 +46,11 @@ const Carousel = ({ data }) => {
               </span>
             </div>
             <div className="flex items-center gap-x-1 bg-[#F37002] md:px-4 px-2.5 rounded-3xl md:py-2 py-2 md:text-base text-xs mt-4">
-              <button className="text-[#F7F7F7] font-semibold uppercase">
-                Book Now
-              </button>
+              <Link to={data[currentIndex].url}>
+                <button className="text-[#F7F7F7] font-semibold uppercase">
+                  View More
+                </button>
+              </Link>
             </div>
           </div>
         </div>

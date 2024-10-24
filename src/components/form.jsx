@@ -2,10 +2,10 @@ import { useState } from "react";
 import axios from "axios";
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    name: "",
     phone: "",
     email: "",
-    destination: "",
+    NoOfMembers: "",
     date: "",
   });
 
@@ -20,9 +20,9 @@ const SignUpForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { username, phone, email } = formData;
+    const { name, phone, email,date, } = formData;
     console.log(formData);
-    if (!email && !username && !phone) alert("Please fill all fields");
+    if (!email && !name && !phone) alert("Please fill all fields");
     axios
       .post(`https://tourplanerbackend.onrender.com/send-email`, formData)
       .then((res) => {

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
-const SignUpForm = () => {
+const SignUpForm = ({ selectedPackage }) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    NoOfMembers: "",
-    date: "",
+    numberOfMembers: "",
+    selectedPackage: selectedPackage,
   });
 
   const handleChange = (e) => {
@@ -20,7 +20,7 @@ const SignUpForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { name, phone, email,date, } = formData;
+    const { name, phone, email, numberOfMembers, selectedPackage } = formData;
     console.log(formData);
     if (!email && !name && !phone) alert("Please fill all fields");
     axios
@@ -36,7 +36,10 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      {["name", "phone", "email", "date" ,"No. of Members"].map((field) => (
+      <h2 className="text-xl font-semibold mb-4">
+        Request Callback for: {selectedPackage?.packageName}
+      </h2>
+      {["name", "phone", "email", "numberOfMembers"].map((field) => (
         <div key={field} className="w-full">
           <label className="block mb-2 text-sm text-[#fcaf17]" htmlFor={field}>
             {field.charAt(0).toUpperCase() +
@@ -44,11 +47,16 @@ const SignUpForm = () => {
           </label>
           <input
             type={
-              field === "date" ? "date" : field === "email" ? "email" : "text"
+              field === "email"
+                ? "email"
+                : field === "numberOfMembers"
+                ? "number"
+                : "text"
             }
             id={field}
             name={field}
             value={formData[field]}
+            min={0}
             onChange={handleChange}
             className="w-full bg-white text-[#0F1E32] border border-[#F37004] rounded-md px-3 py-2 focus:outline-none focus:border-[#F37004] focus:ring-1 focus:ring-[#F37004]"
             placeholder={`${

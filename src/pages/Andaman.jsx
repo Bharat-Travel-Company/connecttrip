@@ -5,7 +5,7 @@ import SalesBanner from "../components/banner";
 import SignUpForm from "../components/form";
 import Footer from "../components/footer";
 import { Link, useNavigate } from "react-router-dom";
-import { kashmirPackages } from "../data/packagesData";
+import { andamanPackages, kashmirPackages } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
 import { FaTag } from "react-icons/fa6";
 import { placesToVisit } from "../data/packagesData";
@@ -115,7 +115,7 @@ const Andaman = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <Navbar />
-      <Carousel data={kashmirPackages} />
+      <Carousel data={andamanPackages} />
       <section className=" flex items-center justify-center flex-col py-16 max-w-[1200px] w-full">
         <div className="w-full pl-4 mb-4 space-y-0.5">
           <h1 className="text-2xl  font-semibold  text-[#fcaf17] w-full text-start flex ">
@@ -126,7 +126,7 @@ const Andaman = () => {
           </p>
         </div>
         <div className="max-w-[1200px] w-full px-4 grid lg:grid-cols-3 md:grid-cols-2  grid-cols-1 gap-4">
-          {kashmirPackages.map((pkg, index) => (
+          {andamanPackages.map((pkg, index) => (
             <Link key={index}
             to="/tour">
               <Card

@@ -34,7 +34,7 @@ const Card = ({
       </div>
       <div className="p-4 flex flex-col gap-2">
         <div className="flex justify-between items-center">
-          <p className="text-gray-500 text-sm">{duration}</p>
+          <p className="text-gray-500 font-semibold">{duration}</p>
           {tag && (
             <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
               <FaTag />
@@ -53,8 +53,8 @@ const Card = ({
           </span>
         </div>
         <div className="">  
-            <button className="w-full  bg-[#f37002] text-white py-2 rounded-lg my-2 ">
-             View More
+            <button className="w-full  bg-[#f37002] text-white font-semibold py-2 rounded-lg my-2 ">
+             Awail This Offers
             </button>
         </div>
       </div>

@@ -38,17 +38,19 @@ const Carousel = ({ data }) => {
             </h3>
             <div className="flex items-center my-[15px] min-h-[1px] min-w-[70vw]  bg-gradient-to-r from-[hsla(0,0%,100%,.05)] via-white to-[hsla(0,0%,88%,.05)]"></div>
             <div className=" font-semibold flex items-center gap-2">
+            <span className="text-3xl text-red-300 font-semibold line-through decoration-current my-auto">
+                {data[currentIndex].originalPrice}
+              </span>
               <span className="text-3xl text-white ">
                 {data[currentIndex].discountedPrice}
               </span>
-              <span className="text-2xl text-white/70 line-through decoration-current my-auto">
-                {data[currentIndex].originalPrice}
-              </span>
+             
             </div>
+
             <div className="flex items-center gap-x-1 bg-[#F37002] md:px-4 px-2.5 rounded-3xl md:py-2 py-2 md:text-base text-xs mt-4">
               <Link to={data[currentIndex].url}>
                 <button className="text-[#F7F7F7] font-semibold uppercase">
-                  View More
+                  Check Offers
                 </button>
               </Link>
             </div>

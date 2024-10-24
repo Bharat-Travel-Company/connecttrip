@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="w-full ">
       <div className="flex absolute z-40 w-full lg:px-24 md:px-4 px-2  py-2 bg-gradient-to-b from-gray-50/10  to-transparent backdrop-blur-lg">
         <div className="flex h-full items-center justify-start flex-grow">
-          <Link to="/" className="pl-1 font-semibold">
+          <Link to="/" className="pl-1 font-semibold ">
             <img src={logo} alt="" className="md:w-44 w-28  h-9" />
           </Link>
         </div>

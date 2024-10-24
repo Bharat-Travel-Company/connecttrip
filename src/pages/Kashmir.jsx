@@ -64,7 +64,7 @@ const Card = ({
           <span className="text-lg font-bold text-green-600">
             {discountedPrice}
           </span>
-          <span className="text-sm text-gray-500 line-through">
+          <span className=" text-gray-500 line-through">
             {originalPrice}
           </span>
           <span className="text-sm font-semibold text-green-600 bg-green-100 px-2">

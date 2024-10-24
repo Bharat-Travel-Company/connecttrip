@@ -36,7 +36,7 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      {["username", "phone", "email", "date"].map((field) => (
+      {["name", "phone", "email", "date" ,"No. of Members"].map((field) => (
         <div key={field} className="w-full">
           <label className="block mb-2 text-sm text-[#fcaf17]" htmlFor={field}>
             {field.charAt(0).toUpperCase() +
@@ -51,7 +51,7 @@ const SignUpForm = () => {
             value={formData[field]}
             onChange={handleChange}
             className="w-full bg-white text-[#0F1E32] border border-[#F37004] rounded-md px-3 py-2 focus:outline-none focus:border-[#F37004] focus:ring-1 focus:ring-[#F37004]"
-            placeholder={`Your ${
+            placeholder={`${
               field.charAt(0).toUpperCase() +
               field.slice(1).replace(/([A-Z])/g, " $1")
             }`}

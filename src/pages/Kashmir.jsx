@@ -6,7 +6,7 @@ import SignUpForm from "../components/form";
 import Footer from "../components/footer";
 import { kashmirPackages } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
-import { FaTag } from "react-icons/fa6";
+import { FaTag, FaPhone } from "react-icons/fa6";
 import { placesToVisit } from "../data/packagesData";
 import { useState } from "react";
 
@@ -21,14 +21,12 @@ const Modal = ({ onClose, selectedPackage }) => {
           ✕
         </button>
         <section>
-          
           <SignUpForm selectedPackage={selectedPackage} />
         </section>
       </div>
     </div>
   );
 };
-
 const Card = ({
   image,
   duration,
@@ -40,6 +38,11 @@ const Card = ({
   stayDetails,
   handleModalOpen,
 }) => {
+   const handleCall = () => {
+     //to open in same tab
+     // window.location.href = "tel:+91-963-010-7798";
+     window.open("tel:+91-963-010-7798", "_blank");
+   };
   return (
     <div className="rounded-xl flex flex-col w-full gap-2 shadow-lg transition-shadow duration-300">
       <div className=" w-full h-72 relative rounded-xl overflow-hidden">
@@ -93,7 +96,13 @@ const Card = ({
             ).toLocaleString("en-IN")}
           </span>
         </div>
-        <div className="">
+        <div className="flex gap-x-2">
+          <button
+            className="w-12 border-2 border-[#f37002] text-[#f37002] py-2 rounded-lg my-2 flex items-center justify-center"
+            onClick={handleCall}
+          >
+            <FaPhone />
+          </button>
           <button
             className="w-full bg-[#f37002] text-white py-2 rounded-lg my-2"
             onClick={() => handleModalOpen()}

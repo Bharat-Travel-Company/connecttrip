@@ -38,7 +38,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       </button>
       <div
         className={`transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-24 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <p className="px-6 py-2 text-sm text-gray-500">{answer}</p>

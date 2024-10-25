@@ -96,9 +96,9 @@ const TermsAndConditions = () => {
       <h2>Contact Us</h2>
       <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
       <ul>
-        <li>By email: Tourplnr@gmail.com</li>
+        <li>By email: bharattravelcompany@gmail.com</li>
         <li>By visiting this page on our website: <a href="https://tourplaner.in/" target="_blank" rel="noopener noreferrer">https://tourplaner.in/</a></li>
-        <li>By phone number: 9319959557</li>
+        <li>By phone number: +91-9630107798</li>
       </ul>
       <Link to="/" style={styles.link}>Go Back</Link>
     </div>

@@ -113,7 +113,7 @@ const MainHome = () => {
           <SignUpForm></SignUpForm>
         </div>
       </section> */}
-      <section className="pb-16">
+      <section className="pb-16 w-full">
         <SalesBanner></SalesBanner>
       </section>
       <Footer></Footer>

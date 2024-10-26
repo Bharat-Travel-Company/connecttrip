@@ -20,7 +20,7 @@ const SalesBanner = () => {
                20-50% Off on Packages & 100% Refund Policy 
             </span>
             <br />
-            <span className="text-gray-200 text-xl">Free Travel Buddy </span>
+            <span className="text-white text-3xl font-semibold">Free Travel Buddy </span>
           </div>
           <a href={`tel:${phoneNumber}`} className={buttonClasses}>
             <span>Call Now {phoneNumber}</span>

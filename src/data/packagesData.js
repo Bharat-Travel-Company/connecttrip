@@ -402,8 +402,8 @@ export const andamanPackages = [
   {
     packageName: "Andaman and Nicobar Tour Packages",
     duration: "03 Nights & 04 Days",
-    originalPrice:  "15999",
-    discountedPrice:"10999",
+    originalPrice:  "₹15999",
+    discountedPrice:"₹10999",
     discount: null,
     inclusions: [
       "Hotels",
@@ -422,8 +422,8 @@ export const andamanPackages = [
   {
     packageName: "Port Blair Tour Package",
     duration: "05 Nights & 06 Days",
-    originalPrice: "20999",
-    discountedPrice: "13999",
+    originalPrice: "₹20999",
+    discountedPrice: "₹13999",
     discount: null,
     inclusions: [
       "Hotels",
@@ -442,8 +442,8 @@ export const andamanPackages = [
   {
     packageName: "Andaman Tour Packages",
     duration: "04 Nights & 05 Days",
-    originalPrice: "20999",
-    discountedPrice: "15999",
+    originalPrice: "₹20999",
+    discountedPrice: "₹15999",
     discount: null,
     inclusions: [
       "Hotels",
@@ -462,8 +462,8 @@ export const andamanPackages = [
   {
     packageName: "Nicobar Tour Packages",
     duration: "05 Nights & 06 Days",
-    originalPrice: "20999",
-    discountedPrice: "15999",
+    originalPrice: "₹20999",
+    discountedPrice: "₹15999",
     discount: null,
     inclusions: [
       "Hotels",
@@ -482,8 +482,8 @@ export const andamanPackages = [
   {
     packageName: "Andaman Family Tour Packages",
     duration: "08 Nights & 09 Days",
-    originalPrice: "25999",
-    discountedPrice: "18999",
+    originalPrice: "₹25999",
+    discountedPrice: "₹18999",
     discount: null,
     inclusions: [
       "Hotels",
@@ -502,8 +502,8 @@ export const andamanPackages = [
   {
     packageName: "Andaman Group Tour Packages",
     duration: "04 Nights & 05 Days",
-    originalPrice: "18999",
-    discountedPrice: "13999",
+    originalPrice: "₹18999",
+    discountedPrice: "₹13999",
     discount: null,
     inclusions: [
       "Hotels",
@@ -522,8 +522,8 @@ export const andamanPackages = [
   {
     packageName: "Andaman Honeymoon Package",
     duration: "06 Nights & 07 Days",
-    originalPrice: "20999",
-    discountedPrice: "15999",
+    originalPrice: "₹20999",
+    discountedPrice: "₹15999",
     discount: null,
     inclusions: [
       "Hotels",
@@ -542,8 +542,8 @@ export const andamanPackages = [
   {
     packageName: "Andaman Holiday Tour Packages",
     duration: "07 Nights & 08 Days",
-    originalPrice: "21999",
-    discountedPrice: "16999",
+    originalPrice: "₹21999",
+    discountedPrice: "₹16999",
     discount: null,
     inclusions: [
       "Hotels",
@@ -562,8 +562,8 @@ export const andamanPackages = [
   {
     packageName: "Andaman Budget Package",
     duration: "09 Nights & 10 Days",
-    originalPrice: "25999",
-    discountedPrice: "20999",
+    originalPrice: "₹25999",
+    discountedPrice: "₹20999",
     discount: null,
     inclusions: [
       "Hotels",

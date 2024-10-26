@@ -14,11 +14,13 @@ const SalesBanner = () => {
       >
         <div className="flex flex-col gap-6">
           <div>
-            <span className="text-gray-200">Diwali sale</span>
+            <span className="text-gray-200 text-xl">Diwali sale </span>
             <br />
             <span className=" text-4xl text-white font-semibold">
-              5% off every Group Tour
+               20-50% Off on Packages & 100% Refund Policy 
             </span>
+            <br />
+            <span className="text-gray-200 text-xl">Free Travel Buddy </span>
           </div>
           <a href={`tel:${phoneNumber}`} className={buttonClasses}>
             <span>Call Now {phoneNumber}</span>

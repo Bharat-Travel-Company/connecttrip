@@ -1,19 +1,21 @@
-import { BrowserRouter as Router, Route, Routes, Form } from "react-router-dom";
-import { useState, useEffect } from "react";
-import Home from "./pages/Kashmir";
-import Tour from "./pages/tour";
-import SignUpForm from "./components/form";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useState, useEffect, Suspense, lazy } from "react";
 import WhatsAppButton from "./components/whatsApp";
 
-import PrivacyPolicy from "./components/privacyPolicy";
-import TermsAndConditions from "./components/termsAndConditions";
-import MainHome from "./pages/mainHome";
-import Kashmir from "./pages/Kashmir";
-import Kerala from "./pages/Kerala";
-import Himachal from "./pages/Himachal";
-import Andaman from "./pages/Andaman";
-import Dubai from "./pages/Dubai";
-import Thailand from "./pages/Thailand";
+// Lazy load components
+const Home = lazy(() => import("./pages/Kashmir"));
+const Tour = lazy(() => import("./pages/tour"));
+const SignUpForm = lazy(() => import("./components/form"));
+const PrivacyPolicy = lazy(() => import("./components/privacyPolicy"));
+const TermsAndConditions = lazy(() => import("./components/termsAndConditions"));
+const MainHome = lazy(() => import("./pages/mainHome"));
+const Kashmir = lazy(() => import("./pages/Kashmir"));
+const Kerala = lazy(() => import("./pages/Kerala"));
+const Himachal = lazy(() => import("./pages/Himachal"));
+const Andaman = lazy(() => import("./pages/Andaman"));
+const Dubai = lazy(() => import("./pages/Dubai"));
+const Thailand = lazy(() => import("./pages/Thailand"));
+
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
@@ -32,12 +34,12 @@ const Modal = ({ isOpen, onClose }) => {
       <div className="bg-white p-8 rounded-lg shadow-lg relative md:max-w-md max-w-sm w-full">
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-[#FFDA32] bg-[#0F1E32] hover:text-[#0F1E32]  hover:bg-[#FFDA32] rounded-full size-8"
+          className="absolute top-2 right-2 text-[#FFDA32] bg-[#0F1E32] hover:text-[#0F1E32] hover:bg-[#FFDA32] rounded-full size-8"
         >
           ✕
         </button>
         <section>
-          <SignUpForm></SignUpForm>
+          <SignUpForm />
         </section>
       </div>
     </div>
@@ -47,37 +49,30 @@ const Modal = ({ isOpen, onClose }) => {
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
-
-
   return (
     <>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      {/* <TruecallerButton></TruecallerButton> */}
-
-      <WhatsAppButton></WhatsAppButton>
+      <WhatsAppButton />
 
       <Router>
         <div className="w-full h-full">
-          <Routes>
-            <Route path="/" element={<MainHome />} />
-            <Route path="/kashmir" element={<Kashmir />} />
-            <Route path="/kerala" element={<Kerala />} />
-            <Route path="/himachal" element={<Himachal />} />
-            <Route path="/andamanandnikobar" element={<Andaman />} />
-            <Route path="/dubai" element={<Dubai />} />
-            <Route path="/thailand" element={<Thailand />} />
-
-            <Route path="/tour" element={<Tour />} />
-            <Route path="/form" element={<SignUpForm/>} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route
-              path="/terms-and-conditions"
-              element={<TermsAndConditions />}
-            />
-          </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<MainHome />} />
+              <Route path="/kashmir" element={<Kashmir />} />
+              <Route path="/kerala" element={<Kerala />} />
+              <Route path="/himachal" element={<Himachal />} />
+              <Route path="/andamanandnikobar" element={<Andaman />} />
+              <Route path="/dubai" element={<Dubai />} />
+              <Route path="/thailand" element={<Thailand />} />
+              <Route path="/tour" element={<Tour />} />
+              <Route path="/form" element={<SignUpForm />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            </Routes>
+          </Suspense>
         </div>
       </Router>
-    
     </>
   );
 }

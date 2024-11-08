@@ -6,7 +6,7 @@ const SignUpForm = ({ selectedPackage }) => {
     phone: "",
     email: "",
     numberOfMembers: "",
-    selectedPackage: selectedPackage,
+    selectedPackage: selectedPackage.packageName,
   });
 
   const handleChange = (e) => {
@@ -24,7 +24,7 @@ const SignUpForm = ({ selectedPackage }) => {
     console.log(formData);
     if (!email && !name && !phone) alert("Please fill all fields");
     axios
-      .post(`https://tourplanerbackend.onrender.com/send-email`, formData)
+      .post(`https://landing-backend-ct.onrender.com/send-email`, formData)
       .then((res) => {
         if (res.message === "Form submitted successfully") {
           alert("Contact Form submited");
